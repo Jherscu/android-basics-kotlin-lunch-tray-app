@@ -21,6 +21,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
+import com.example.lunchtray.R
 import com.example.lunchtray.databinding.FragmentEntreeMenuBinding
 import com.example.lunchtray.model.OrderViewModel
 
@@ -65,6 +67,8 @@ class EntreeMenuFragment : Fragment() {
      * Navigate to the side menu fragment.
      */
     fun goToNextScreen() {
+        findNavController().navigate(R.id.action_entreeMenuFragment_to_sideMenuFragment)
+        // <CHECK>
         // TODO: Navigate to the SideMenuFragment
     }
 
