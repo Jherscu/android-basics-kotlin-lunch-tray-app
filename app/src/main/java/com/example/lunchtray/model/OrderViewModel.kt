@@ -15,7 +15,6 @@
  */
 package com.example.lunchtray.model
 
-import android.renderscript.Sampler
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
@@ -69,7 +68,11 @@ class OrderViewModel : ViewModel() {
     /**
      * Base function for setting meal selections.
      */
-    private fun setMealSelections(item: String, course: MutableLiveData<MenuItem?>, previousPriceValue: Double) {
+    private fun setMealSelections(
+        item: String,
+        course: MutableLiveData<MenuItem?>,
+        previousPriceValue: Double
+    ) {
         // If the previous menu item's value exists and it is not the same as the value being input,
         // subtract the old price
         if (course.value?.name != item && course.value?.name != null) {

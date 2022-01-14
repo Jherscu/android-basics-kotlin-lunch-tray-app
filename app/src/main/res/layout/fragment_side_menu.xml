@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~ Copyright (C) 2021 The Android Open Source Project.
   ~
   ~ Licensed under the Apache License, Version 2.0 (the "License");
@@ -14,14 +13,14 @@
   ~ See the License for the specific language governing permissions and
   ~ limitations under the License.
   -->
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/layout_side_menu"
     tools:context=".ui.order.SideMenuFragment">
 
     <data>
+
         <variable
             name="viewModel"
             type="com.example.lunchtray.model.OrderViewModel" />
@@ -59,9 +58,9 @@
                     android:id="@+id/salad"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["salad"].name}'
                     android:onClick='@{() -> viewModel.setSide("salad")}'
+                    android:text='@{viewModel.menuItems["salad"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 1" />
 
                 <TextView
@@ -91,9 +90,9 @@
                     android:id="@+id/soup"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["soup"].name}'
                     android:onClick='@{() -> viewModel.setSide("soup")}'
+                    android:text='@{viewModel.menuItems["soup"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 2" />
 
                 <TextView
@@ -123,9 +122,9 @@
                     android:id="@+id/potatoes"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["potatoes"].name}'
                     android:onClick='@{() -> viewModel.setSide("potatoes")}'
+                    android:text='@{viewModel.menuItems["potatoes"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 3" />
 
                 <TextView
@@ -155,9 +154,9 @@
                     android:id="@+id/rice"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textAppearance="?attr/textAppearanceBody1"
-                    android:text='@{viewModel.menuItems["rice"].name}'
                     android:onClick='@{() -> viewModel.setSide("rice")}'
+                    android:text='@{viewModel.menuItems["rice"].name}'
+                    android:textAppearance="?attr/textAppearanceBody1"
                     tools:text="Side 4" />
 
                 <TextView
@@ -193,7 +192,7 @@
                 android:text="@{@string/subtotal(viewModel.subtotal)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
-                tools:text="Subtotal $5.00"/>
+                tools:text="Subtotal $5.00" />
 
             <!-- <CHECK> -->
             <!-- TODO: cancel the order when clicked -->
