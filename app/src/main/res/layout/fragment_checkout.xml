@@ -21,6 +21,19 @@
     android:id="@+id/layout_checkout"
     tools:context=".ui.order.CheckoutFragment">
 
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.example.lunchtray.model.OrderViewModel" />
+
+        <variable
+            name="checkoutFragment"
+            type="com.example.lunchtray.ui.order.CheckoutFragment" />
+
+    </data>
+
+    <!-- <CHECK> -->
     <!-- TODO: Add the data binding variables of the type OrderViewModel and the CheckoutFragment -->
 
     <ScrollView
@@ -39,50 +52,62 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: display the entree name based on the entree selection -->
             <TextView
                 android:id="@+id/entree_selection"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.entree.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/order_summary"
                 tools:text="Cauliflower" />
 
+            <!-- <CHECK> -->
             <!-- TODO: display the entree price based on the entree selection -->
             <TextView
                 android:id="@+id/entree_price"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.entree.formattedPrice}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/entree_selection"
                 tools:text="$7.00"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: display the side name based on the side selection -->
             <TextView
                 android:id="@+id/side_selection"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.side.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/entree_selection"
                 tools:text="Spicy Potatoes" />
 
+            <!-- <CHECK> -->
             <!-- TODO: display the side price based on the side selection -->
             <TextView
                 android:id="@+id/side_price"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.side.formattedPrice}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/side_selection"
                 tools:text="$2.00"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: display the accompaniment name based on the accompaniment selection -->
             <TextView
                 android:id="@+id/accompaniment_selection"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.accompaniment.name}"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/side_selection"
                 tools:text="Mixed Berries" />
 
+            <!-- <CHECK> -->
             <!-- TODO: display the accompaniment price based on the accompaniment selection -->
             <TextView
                 android:id="@+id/accompaniment_price"
                 style="@style/Widget.LunchTray.TextView.CheckoutItem.Info"
+                android:text="@{viewModel.accompaniment.formattedPrice}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@id/accompaniment_selection"
                 tools:text="$1.00"/>
@@ -95,26 +120,32 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/accompaniment_selection" />
 
+            <!-- <CHECK> -->
             <!-- TODO: set the text to the current subtotal value from the view model -->
             <TextView
                 android:id="@+id/subtotal"
                 style="@style/Widget.LunchTray.TextView.Subtotal"
+                android:text="@{@string/subtotal(viewModel.subtotal)}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider"
                 tools:text="Subtotal: $10.00"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: set the text to the current tax value from the view model -->
             <TextView
                 android:id="@+id/tax"
                 style="@style/Widget.LunchTray.TextView.Subtotal"
+                android:text="@{@string/tax(viewModel.tax)}"
                 android:layout_marginTop="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/subtotal"
                 tools:text="Tax: $0.73"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: set the text to the current total value from the view model -->
             <TextView
                 android:id="@+id/total"
+                android:text="@{@string/total(viewModel.total)}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAllCaps="true"
@@ -123,9 +154,11 @@
                 app:layout_constraintTop_toBottomOf="@id/tax"
                 tools:text="Total: $10.73"/>
 
+            <!-- <CHECK> -->
             <!-- TODO: submit the order when clicked -->
             <Button
                 android:id="@+id/submit_button"
+                android:onClick="@{() -> checkoutFragment.submitOrder()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/side_margin"
@@ -133,11 +166,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/total"/>
-
+            <!-- <CHECK> -->
             <!-- TODO: cancel the order when clicked -->
             <Button
                 android:id="@+id/cancel_button"
                 style="?attr/materialButtonOutlinedStyle"
+                android:onClick="@{() -> checkoutFragment.cancelOrder()}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/base_margin"

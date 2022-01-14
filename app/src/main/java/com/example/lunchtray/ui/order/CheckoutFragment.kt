@@ -63,6 +63,10 @@ class CheckoutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
+            viewModel = sharedViewModel
+            checkoutFragment = this@CheckoutFragment
+
+            // <CHECK>
             // TODO: initialize the OrderViewModel and CheckoutFragment variables
         }
     }
